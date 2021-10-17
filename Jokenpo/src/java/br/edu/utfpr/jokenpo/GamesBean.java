@@ -4,53 +4,74 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.util.Random;
+
 /**
  *
  * @author dgomes
  */
 
-
 @SessionScoped
 @Named
 public class GamesBean implements Serializable {
-    String  choose;
+
+    String jogadaJogador;
+    String jogadaMaquina;
+
+    
+    
+    public String JogadaMaquina(){
+        int compNum;
+        jogadaMaquina = "";
+        Random random = new Random();
+        compNum = random.nextInt(3) + 1 ;
+        if(compNum == 1)
+            jogadaMaquina = "pedra";
+        if(compNum == 2)
+            jogadaMaquina = "papel";
+        if(compNum == 3)
+            jogadaMaquina = "tesoura";
+        
+        return jogadaMaquina;
+    }
+
+    public String getjogadaJogador() {
+        return jogadaJogador;
+    }
+    
+    public void setjogadaJogador(String jogadaJogador) {
+        this.jogadaJogador = jogadaJogador;
+    }
+
+    public String getJogadaMaquina() {
+        int compNum;
+        jogadaMaquina = "";
+        Random random = new Random();
+        compNum = random.nextInt(3) + 1 ;
+        if(compNum == 1)
+            jogadaMaquina = "pedra";
+        if(compNum == 2)
+            jogadaMaquina = "papel";
+        if(compNum == 3)
+            jogadaMaquina = "tesoura";
+        
+        return jogadaMaquina;
+    }
+
+    public void setJogadaMaquina(String jogadaMaquina) {
+        this.jogadaMaquina = jogadaMaquina;
+    }
+    
+    
+    
+    
 //    private String resultado;
 //
 //    
 //    public void getResultado(){
 //        resultado = "Tua jogada ";
 //    }
-    
-//    public String JogadaMaquina(){
-//        int compNum;
-//        String compjogada = "";
-//        Random random = new Random();
-//        compNum = random.nextInt(3) + 1 ;
-//        if(compNum == 1)
-//            compjogada = "pedra";
-//        if(compNum == 2)
-//            compjogada = "papel";
-//        if(compNum == 3)
-//            compjogada = "tesoura";
-//        
-//        return compjogada;
-//    }
 
-    public String getChoose() {
-        return choose;
-    }
-
-    public void setChoose(String choose) {
-        this.choose = choose;
-    }
     
-    
-  
-    public String jogadaJogador(){
-        return choose;
-    }
-    
-       
 //
 //    public String getResultado() {
 //        return resultado;
@@ -60,6 +81,4 @@ public class GamesBean implements Serializable {
 //        this.resultado = resultado;
 //    }
 //    
-    
-    
 }

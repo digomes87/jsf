@@ -19,16 +19,20 @@
             <h:form>
                 <h:panelGrid columns="2" style="margin-bottom: 10px" cellpadding="5">
                     <p:outputLabel value="Escolha seu Jogo"/>
-                    <p:selectOneRadio id="jogadajogador" value="#{gamesBean.choose}">
+                    <p:selectOneRadio id="jogadajogador" value="#{gamesBean.jogadaJogador}">
                         <f:selectItem itemLabel="Pedra" itemValue="pedra"/>
                         <f:selectItem itemLabel="Papel" itemValue="papel"/>
                         <f:selectItem itemLabel="Tesoura" itemValue="tesoura"/>
                     </p:selectOneRadio>
 
-                    <p:commandButton value="Jogar" update="msg" icon="ui-icon-check" />
+                    <p:commandButton value="Jogar" update="msg" ajax="false" icon="ui-icon-check"></p:commandButton>
                     <p:spacer />
                     
-                    <h:outputText id="msg" value="#{gamesBean.choose}"></h:outputText>
+                    <h:outputText id="msg" value="#{gamesBean.jogadaJogador}"></h:outputText>
+                    <p:spacer />
+                    
+                    <p:outputLabel value="Maquina"/>
+                    <h:outputText id="msgMquina" value="#{gamesBean.jogadaMaquina}"></h:outputText>
                 </h:panelGrid>
             </h:form>
         </div>
