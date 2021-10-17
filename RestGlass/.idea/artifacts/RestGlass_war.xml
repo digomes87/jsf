@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RestGlass:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>RestGlass</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="RestGlass-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="RestGlass:war exploded" />
+    </root>
+  </artifact>
+</component>
