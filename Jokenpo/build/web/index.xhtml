@@ -25,14 +25,26 @@
                         <f:selectItem itemLabel="Tesoura" itemValue="tesoura"/>
                     </p:selectOneRadio>
 
-                    <p:commandButton value="Jogar" update="msg" ajax="false" icon="ui-icon-check"></p:commandButton>
+                    <p:commandButton value="Jogar" update="msg" ajax="false"></p:commandButton>
                     <p:spacer />
                     
-                    <h:outputText id="msg" value="#{gamesBean.jogadaJogador}"></h:outputText>
+                    <h:outputText id="msg" value="#{gamesBean.Vencedor()}"></h:outputText>
                     <p:spacer />
                     
                     <p:outputLabel value="Maquina"/>
-                    <h:outputText id="msgMquina" value="#{gamesBean.jogadaMaquina}"></h:outputText>
+                    <h:outputText id="msgMaquina" value="#{gamesBean.jogadaMaquina}"></h:outputText>
+                    
+                    <p:outputLabel value="Suas Vitórias" />
+                    <h:outputText id="svitorias" value="#{gamesBean.winCountJogador}"></h:outputText>
+                    
+                    <p:outputLabel value="Vitórias do Computador" />
+                    <h:outputText id="vitoriaspc" value="#{gamesBean.winCountMaquina}"></h:outputText>
+                    
+                    <p:outputLabel value="Empates" />
+                    <h:outputText id="empates" value="#{gamesBean.drawCount}"></h:outputText>
+                    
+                    <p:outputLabel value="jogos" />
+                    <h:outputText id="jogos" value="#{gamesBean.totalpartidas()}"></h:outputText>
                 </h:panelGrid>
             </h:form>
         </div>
